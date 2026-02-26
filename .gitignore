@@ -1,4 +1,9 @@
-data/
+env_data_market/
+*.csv
+Include/
+Lib/
+Scripts/
+share/
 cours/
 
 # Notebook précédent généré
