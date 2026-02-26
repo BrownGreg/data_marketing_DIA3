@@ -3,35 +3,35 @@ import pandas as pd
 df_clients = pd.read_csv('data/customers.csv')
 df_trans = pd.read_csv('data/transactions.csv')
 
-# print(df_clients.head())
+print(df_clients.head())
 #    customer_id / country / first_purchase / last_purchase  / total_spent /  avg_basket / recency_days / tenure_days
-# print(df_trans.head())
+print(df_trans.head())
 #   invoice_id  / customer_id / product_code  / unit_price / invoice_date / country
 
 # Etape 1 
 
 #Nb customers
 nb_customers= len(df_clients['customer_id'].unique()) 
-# print(f'Number of customers: {nb_customers}')
+print(f'Number of customers: {nb_customers}')
 
 nb_transactions = len(df_trans['invoice_id'])
-# print(f'Number of transactions: {nb_transactions}')
+print(f'Number of transactions: {nb_transactions}')
 
 min_date_transaction = df_trans['invoice_date'].min()
-# print(f'Minimum date of transaction: {min_date_transaction}')
+print(f'Minimum date of transaction: {min_date_transaction}')
 max_date_transaction = df_trans['invoice_date'].max()
-# print(f'Maximum date of transaction: {max_date_transaction}')
+print(f'Maximum date of transaction: {max_date_transaction}')
 
 # Quelles colonnes contiennent des valeurs manquantes, et dans quelle proportion ?
 missing_values_clients = df_clients.isnull().sum()
 missing_values_trans = df_trans.isnull().sum()
-# print(f"Valeurs manquantes df_clients {missing_values_clients}")
-# print(f"Valeurs manquantes df_trans {missing_values_trans}")
+print(f"Valeurs manquantes df_clients {missing_values_clients}")
+print(f"Valeurs manquantes df_trans {missing_values_trans}")
 
 #proportion 
-# print("\nProportion valeur manquante :\n")
+print("\nProportion valeur manquante :\n")
 proportion_missing_trans = missing_values_trans / len(df_trans) * 100
-# print(proportion_missing_trans)
+print(proportion_missing_trans)
 
 #Attendu type Client
 # customer_id => ID
@@ -44,8 +44,8 @@ proportion_missing_trans = missing_values_trans / len(df_trans) * 100
 # tenure_days => float
 
 # Réalité type
-# print("\nTypes de données df_clients :\n")
-# print(df_clients.dtypes)
+print("\nTypes de données df_clients :\n")
+print(df_clients.dtypes)
 
 # customer_id         int64
 # country               str
@@ -66,8 +66,8 @@ proportion_missing_trans = missing_values_trans / len(df_trans) * 100
 # country => string
 
 # Réalité type
-# print("\nTypes de données df_trans :\n")
-# print(df_trans.dtypes)
+print("\nTypes de données df_trans :\n")
+print(df_trans.dtypes)
 
 # invoice_id          str
 # customer_id     float64
@@ -92,7 +92,6 @@ report_clients = pd.DataFrame({
 print("\nData Quality Report for df_clients:\n")
 print(report_clients)
 
-# Même logique pour les transactions
 report_trans = pd.DataFrame({
     'Column': df_trans.columns,
     'Missing Values': df_trans.isnull().sum().values,
@@ -103,7 +102,7 @@ report_trans = pd.DataFrame({
 print("\nData Quality Report for df_trans:\n")
 print(report_trans)
 
-# Graphique
+# Graph
 import matplotlib.pyplot as plt
 plt.ion()
 
