@@ -23,7 +23,7 @@ print(valeurs_manquantes)
 
 
 
-print("apres netoyage")
+print("avant netoyage")
 print("Premières lignes :")
 print(df.head(6))
 print("\nStatistiques descriptives :")
@@ -41,3 +41,4 @@ output_path = r"C:\HETIC\2025-2026\Data_Marketing\data_marketing_DIA3\customers_
 df.to_csv(output_path, index=False)
 
 print(f"\nDataset nettoyé sauvegardé dans : {output_path}")
+
