@@ -5,5 +5,14 @@ Lib/
 Scripts/
 share/
 cours/
-data/
-*.cfg
+
+# Notebook précédent généré
+TP1_Etape2_Detection_Anomalies.ipynb
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+
+# Jupyter
+.ipynb_checkpoints/
