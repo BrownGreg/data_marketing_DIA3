@@ -23,7 +23,7 @@ print(valeurs_manquantes)
 
 
 
-print("\n----- Statistiques après nettoyage -----")
+print("apres netoyage")
 print("Premières lignes :")
 print(df.head(6))
 print("\nStatistiques descriptives :")
@@ -39,4 +39,5 @@ print(valeurs_manquantes)
 print(f"\nNombre de lignes final après tout le nettoyage : {len(df)}")
 output_path = r"C:\HETIC\2025-2026\Data_Marketing\data_marketing_DIA3\customers_clean.csv"
 df.to_csv(output_path, index=False)
+
 print(f"\nDataset nettoyé sauvegardé dans : {output_path}")
