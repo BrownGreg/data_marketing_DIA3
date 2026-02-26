@@ -1,3 +1,9 @@
-data/
-cours/
 env_data_market/
+*.csv
+Include/
+Lib/
+Scripts/
+share/
+cours/
+data/
+*.cfg
